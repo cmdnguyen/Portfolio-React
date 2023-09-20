@@ -18,7 +18,7 @@ function NavBar() {
                     to="/About"
                     className={currentPage === '/About'}
                 >
-                    About Ne
+                    About Me
                 </Link>
             </li>
             <li>
