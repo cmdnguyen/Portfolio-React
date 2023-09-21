@@ -1,12 +1,12 @@
-import { Conatiner, Text } from '@chakra-ui/react'
+import { Container, Text } from '@chakra-ui/react'
 
 export default function Footer() {
     return (
-      <Conatiner>
+      <Container>
         <Text>
           This is my footer
         </Text>
-      </Conatiner>
+      </Container>
     );
   }
   
