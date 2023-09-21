@@ -1,10 +1,14 @@
+import { Heading, Text, Container } from '@chakra-ui/react'
+
 export default function Header() {
-    return (
-      <div>
-        <p>
-         Catherine Nguyen<br></br>
-         Full Stack Web Developer
-        </p>
-      </div>
-    );
-  }
+  return (
+    <Container>
+      <Heading>
+        Catherine Nguyen
+      </Heading>
+      <Text>
+        Full Stack Web Developer
+      </Text>
+    </Container>
+  );
+}

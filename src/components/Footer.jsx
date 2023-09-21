@@ -1,10 +1,12 @@
+import { Conatiner, Text } from '@chakra-ui/react'
+
 export default function Footer() {
     return (
-      <div>
-        <p>
+      <Conatiner>
+        <Text>
           This is my footer
-        </p>
-      </div>
+        </Text>
+      </Conatiner>
     );
   }
   

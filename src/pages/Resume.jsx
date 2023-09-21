@@ -1,8 +1,10 @@
+import { Container } from '@chakra-ui/react'
+
 export default function Resume() {
     return (
-      <div>
-        <h2>Resume</h2>
-      </div>
+      <Container>
+
+      </Container>
     );
   }
   

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 // import './index.css'
-// import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider } from '@chakra-ui/react';
 
 import App from './App.jsx'
 import Error from './pages/Error'
@@ -13,9 +13,10 @@ import Contact from './pages/Contact'
 import Portfolio from './pages/Portfolio';
 import Resume from './pages/Resume'
 
+
 const router = createBrowserRouter([
   {
-    path:'/',
+    path: '/',
     element: <App />,
     errorElement: <Error />,
     children: [
@@ -44,5 +45,8 @@ const router = createBrowserRouter([
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
+    <ChakraProvider>
       <RouterProvider router={router} />
+    </ChakraProvider>
+
 )

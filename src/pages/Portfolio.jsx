@@ -1,8 +1,10 @@
+import { Container } from '@chakra-ui/react'
+
 export default function Portfolio() {
     return (
-      <div>
-        <h2>Portfolio</h2>
-      </div>
+      <Container>
+       
+      </Container>
     );
   }
   
