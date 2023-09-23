@@ -2,21 +2,21 @@
 import { Outlet } from 'react-router-dom'
 import Footer from './components/Footer'
 import Header from './components/Header'
-import { chakra } from '@chakra-ui/react';
+import { chakra, Flex } from '@chakra-ui/react';
 // import './App.css'
 
 function App() {
 
   return (
-    <>
-      <chakra.header id='header'>
+    <Flex direction='column' flex='1'>
+      <chakra.header id='header' bg='blue.600'>
         <Header />
       </chakra.header>
       <main>
         <Outlet />
       </main>
       <Footer />
-    </>
+    </Flex>
   )
 }
 

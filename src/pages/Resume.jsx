@@ -1,10 +1,12 @@
-import { Container } from '@chakra-ui/react'
+import { Container, Heading } from '@chakra-ui/react'
 
 export default function Resume() {
-    return (
-      <Container>
-
-      </Container>
-    );
-  }
-  
+  return (
+    <Container>
+      <Heading>
+        Resume
+      </Heading>
+      <br />
+    </Container>
+  );
+}

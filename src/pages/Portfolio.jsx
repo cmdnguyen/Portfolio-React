@@ -1,10 +1,12 @@
-import { Container } from '@chakra-ui/react'
+import { Container, Heading } from '@chakra-ui/react'
 
 export default function Portfolio() {
-    return (
-      <Container>
-       
-      </Container>
-    );
-  }
-  
+  return (
+    <Container>
+      <Heading>
+        Portfolio
+      </Heading>
+      <br />
+    </Container>
+  );
+}

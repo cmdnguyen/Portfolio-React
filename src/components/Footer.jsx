@@ -1,12 +1,12 @@
-import { Container, Text } from '@chakra-ui/react'
+import { Box, Container } from '@chakra-ui/react'
 
-export default function Footer() {
+export default function Footer(props) {
     return (
-      <Container>
-        <Text>
+      <Box as="footer" role="contentinfo" bg="bg.accent.default"{...props}>
+        <Container>
           This is my footer
-        </Text>
-      </Container>
+        </Container>
+      </Box>
     );
   }
   
