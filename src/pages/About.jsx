@@ -4,7 +4,7 @@ import { SiExpress, SiChakraui, SiMysql, SiSequelize, SiMongodb, SiMongoose } fr
 
 export default function About() {
   return (
-    <Container maxW='container.md'>
+    <Container maxW='container.md' mb={10}>
       <Heading>
         About Me
       </Heading>
@@ -17,7 +17,7 @@ export default function About() {
         <Image
           borderRadius='full'
           boxSize='200px'
-          src='public\images\CatherineNguyen_2018_SQHeadshot.jpg'
+          src='/images/CatherineNguyen_2018_SQHeadshot.jpg'
           alt='Catherine Nguyen'
         />
         <Container>
@@ -41,24 +41,19 @@ export default function About() {
                 <Icon as={FaReact} boxSize={6}></Icon>
               </span>
             </Tooltip>
-            <Tooltip label='HTML5' fontSize='md'>
-              <span>
-                <Icon as={FaHtml5} boxSize={6}></Icon>
-              </span>
-            </Tooltip>
             <Tooltip label='JavaScript' fontSize='md'>
               <span>
                 <Icon as={FaJs} boxSize={6}></Icon>
               </span>
             </Tooltip>
+            <Tooltip label='HTML5' fontSize='md'>
+              <span>
+                <Icon as={FaHtml5} boxSize={6}></Icon>
+              </span>
+            </Tooltip>
             <Tooltip label='CSS3' fontSize='md'>
               <span>
                 <Icon as={FaCss3Alt} boxSize={6}></Icon>
-              </span>
-            </Tooltip>
-            <Tooltip label='Express.js' fontSize='md'>
-              <span>
-                <Icon as={SiExpress} boxSize={6}></Icon>
               </span>
             </Tooltip>
             <Tooltip label='Bootstrap' fontSize='md'>
@@ -71,6 +66,16 @@ export default function About() {
                 <Icon as={SiChakraui} boxSize={6}></Icon>
               </span>
             </Tooltip>
+            <Tooltip label='Node.js' fontSize='md'>
+              <span>
+                <Icon as={FaNodeJs} boxSize={6}></Icon>
+              </span>
+            </Tooltip>
+            <Tooltip label='Express.js' fontSize='md'>
+              <span>
+                <Icon as={SiExpress} boxSize={6}></Icon>
+              </span>
+            </Tooltip>
             <Tooltip label='MySQL' fontSize='md'>
               <span>
                 <Icon as={SiMysql} boxSize={6}></Icon>
@@ -81,11 +86,7 @@ export default function About() {
                 <Icon as={SiSequelize} boxSize={6}></Icon>
               </span>
             </Tooltip>
-            <Tooltip label='Node.js' fontSize='md'>
-              <span>
-                <Icon as={FaNodeJs} boxSize={6}></Icon>
-              </span>
-            </Tooltip>
+
             <Tooltip label='MongoDB' fontSize='md'>
               <span>
                 <Icon as={SiMongodb} boxSize={6}></Icon>
