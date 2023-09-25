@@ -1,86 +1,117 @@
 import React from "react";
-import { Link, Box, Flex, Text, Stack, } from "@chakra-ui/react";
+import {
+    Box,
+    Flex,
+    Avatar,
+    HStack,
+    Text,
+    IconButton,
+    Button,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuDivider,
+    useDisclosure,
+    useColorModeValue,
+    Stack,
+} from '@chakra-ui/react';
+import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 
+const Links = [
+    {
+      id: "about",
+      name: "About Me",
+      to: "/",
+    },
+    {
+      id: "portfolio",
+      name: "Portfolio",
+      to: "/Portfolio"
+    },
+    {
+        id: "contact",
+        name: "Contact",
+        to: "/Contact"
+      },
+      {
+        id: "resume",
+        name: "Resume",
+        to: "/Resume"
+      }
+  ];
 
-const NavBar = () => {
-    const [isOpen, setIsOpen] = React.useState(false);
+const NavLink = (props) => {
+    const { children } = props;
 
-    const toggle = () => setIsOpen(!isOpen);
-
-    return (
-
-        <Flex>
-            <MenuToggle toggle={toggle} isOpen={isOpen} />
-            <MenuLinks isOpen={isOpen} />
-        </Flex>
-
-
-    );
-};
-
-const CloseIcon = () => (
-    <svg width="24" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg">
-        <title>Close</title>
-        <path
-            fill="white"
-            d="M9.00023 7.58599L13.9502 2.63599L15.3642 4.04999L10.4142 8.99999L15.3642 13.95L13.9502 15.364L9.00023 10.414L4.05023 15.364L2.63623 13.95L7.58623 8.99999L2.63623 4.04999L4.05023 2.63599L9.00023 7.58599Z"
-        />
-    </svg>
-);
-
-const MenuIcon = () => (
-    <svg
-        width="24px"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="white"
-    >
-        <title>Menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-    </svg>
-);
-
-const MenuToggle = ({ toggle, isOpen }) => {
-    return (
-        <Box display={{ base: "block", md: "none" }} pt={'5'} onClick={toggle}>
-            {isOpen ? <CloseIcon /> : <MenuIcon />}
-        </Box>
-    );
-};
-
-const MenuItem = ({ children, to = "/", ...rest }) => {
-    return (
-        <Link href={to}>
-            <Text display="block" {...rest}>
-                {children}
-            </Text>
-        </Link>
-    );
-};
-
-const MenuLinks = ({ isOpen }) => {
     return (
         <Box
-            id="navbar"
-            pt={5}
-            pr={6}
-            display={{ base: isOpen ? "block" : "none", md: "block" }}
-            flexBasis={{ base: "100%", md: "auto" }}
+            as="a"
+            px={2}
+            py={1}
+            rounded={'md'}
+            _hover={{
+                textDecoration: 'none',
+                bg: useColorModeValue('gray.200', 'gray.700'),
+            }}
+            href={'#'}
         >
-            <Stack
-                
-                spacing={8}
-                justify={["center", "space-between", "flex-end", "flex-end"]}
-                direction={["column", "row", "row", "row"]}
-            >
-                <MenuItem to="/">About Me</MenuItem>
-                <MenuItem to="/Portfolio">Portfolio</MenuItem>
-                <MenuItem to="/Contact"> Contact</MenuItem>
-                <MenuItem to="/Resume"> Resume </MenuItem>
-            </Stack>
+            {children}
         </Box>
     );
 };
+export default function NavBar() {
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
+    return (
+        <>
+            <Box px={4}>
+                <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
+                    <IconButton
+                        size={'md'}
+                        icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+                        aria-label={'Open Menu'}
+                        display={{ md: 'none' }}
+                        onClick={isOpen ? onClose : onOpen}
+                    />
+                    <HStack spacing={8} alignItems={'center'}>
+                        <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
+                            {Links.map((item) => (
+                                <NavLink key={item.name} to={item.to}>{item.name}</NavLink>
+                            ))}
+                        </HStack>
+                    </HStack>
+                    <Flex alignItems={'center'}>
+                        <Menu>
+                            <MenuButton
+                                as={Button}
+                                rounded={'full'}
+                                variant={'link'}
+                                cursor={'pointer'}
+                                minW={0}
+                            >
+                            </MenuButton>
+                            <MenuList>
+                                <MenuItem>Link 1</MenuItem>
+                                <MenuItem>Link 2</MenuItem>
+                                <MenuDivider />
+                                <MenuItem>Link 3</MenuItem>
+                            </MenuList>
+                        </Menu>
+                    </Flex>
+                </Flex>
 
-export default NavBar;
+                {isOpen ? (
+                    <Box pb={4} display={{ md: 'none' }}>
+                        <Stack as={'nav'} spacing={4}>
+                            {Links.map((link) => (
+                                <NavLink key={link}>{link}</NavLink>
+                            ))}
+                        </Stack>
+                    </Box>
+                ) : null}
+            </Box>
+
+        </>
+    );
+}
