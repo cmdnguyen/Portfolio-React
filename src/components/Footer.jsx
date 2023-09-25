@@ -1,5 +1,6 @@
-import { Box, Container, HStack, chakra, useColorModeValue, VisuallyHidden } from '@chakra-ui/react'
-import { SiGithub, SiLinkedin, SiX } from 'react-icons/si'
+import { Box, Container, Stack, chakra, useColorModeValue, VisuallyHidden, Text } from '@chakra-ui/react'
+import { SiX } from 'react-icons/si'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 
 const SocialButton = ({
@@ -29,22 +30,32 @@ const SocialButton = ({
   );
 };
 
-export default function Footer(props) {
+export default function Footer() {
   return (
-    <Box as="footer" bg="gray.100"{...props}>
-      <Container>
-        <HStack>
-          <SocialButton boxSize={6} label={'GitHub'} href={'https://github.com/cmdnguyen'}>
-            <SiGithub />
+    <Box
+      bg={useColorModeValue('gray.50', 'gray.900')}
+      color={useColorModeValue('gray.700', 'gray.200')}>
+      <Container
+        as={Stack}
+        maxW={'6xl'}
+        py={4}
+        direction={{ base: 'column', md: 'row' }}
+        spacing={4}
+        justify={{ base: 'center', md: 'space-between' }}
+        align={{ base: 'center', md: 'center' }}>
+        <Text>© {new Date().getFullYear()} Catherine Nguyen. All rights reserved</Text>
+        <Stack direction={'row'} spacing={6}>
+          <SocialButton label={'GitHub'} href={'https://github.com/cmdnguyen'}>
+            <FaGithub />
           </SocialButton>
           <SocialButton label={'LinkedIn'} href={'https://www.linkedin.com/in/cmdnguyen/'}>
-            <SiLinkedin />
+            <FaLinkedin />
           </SocialButton>
           <SocialButton label={'X'} href={'https://twitter.com/cmdnguyen'}>
             <SiX />
           </SocialButton>
 
-        </HStack>
+        </Stack>
       </Container>
     </Box>
   );
