@@ -1,4 +1,4 @@
-import { Container, Heading, Button, Text, Tooltip, Icon, HStack } from '@chakra-ui/react'
+import { Container, Heading, Button, Text, Tooltip, Icon, SimpleGrid } from '@chakra-ui/react'
 import { FaReact, FaHtml5, FaJs, FaCss3Alt, FaBootstrap, FaNodeJs } from 'react-icons/fa'
 import { SiExpress, SiChakraui, SiMysql, SiSequelize, SiMongodb, SiMongoose } from 'react-icons/si'
 
@@ -30,7 +30,7 @@ export default function Resume() {
       </Container>
       <Container my={1}>
         <Text>Here are some of my technical skills:</Text>
-        <HStack>
+        <SimpleGrid columns={{ base: 8, sm: 10, md: 15, lg: 15 }} spacing={5}>
           <Tooltip label='React' fontSize='md'>
             <span>
               <Icon as={FaReact} boxSize={6}></Icon>
@@ -92,7 +92,7 @@ export default function Resume() {
               <Icon as={SiMongoose} boxSize={6}></Icon>
             </span>
           </Tooltip>
-        </HStack>
+        </SimpleGrid>
       </Container>
     </Container>
   );
