@@ -59,7 +59,7 @@ export default function Contact() {
             <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
               <WrapItem>
                 <Box>
-                  <Heading>Contact</Heading>
+                <Heading>Contact</Heading>
                   <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
                     Fill the form below to contact
                   </Text>
@@ -84,7 +84,7 @@ export default function Contact() {
                 <Box bg="white" borderRadius="lg">
                   <Box m={8} color="#0B0E3F">
                     <VStack spacing={5}>
-                      <FormControl id="name">
+                      <FormControl id="name" isRequired>
                         <FormLabel>Your Name</FormLabel>
                         <InputGroup borderColor="#E0E1E7">
                           <InputLeftElement pointerEvents="none">
@@ -93,7 +93,7 @@ export default function Contact() {
                           <Input type="text" size="md" />
                         </InputGroup>
                       </FormControl>
-                      <FormControl id="name">
+                      <FormControl id="email" isRequired>
                         <FormLabel>Mail</FormLabel>
                         <InputGroup borderColor="#E0E1E7">
                           <InputLeftElement pointerEvents="none">
@@ -102,7 +102,7 @@ export default function Contact() {
                           <Input type="text" size="md" />
                         </InputGroup>
                       </FormControl>
-                      <FormControl id="name">
+                      <FormControl id="message" isRequired>
                         <FormLabel>Message</FormLabel>
                         <Textarea
                           borderColor="gray.300"

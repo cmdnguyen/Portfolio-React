@@ -50,7 +50,7 @@ const NavLink = (props) => {
             rounded={'md'}
             _hover={{
                 textDecoration: 'none',
-                bg: useColorModeValue('gray.200', 'gray.700'),
+                bg: useColorModeValue('gray.500', 'gray.700'),
             }}
             href={page.to}
         >
@@ -66,7 +66,7 @@ export default function NavBar() {
         <>
             <Box px={4}>
                 <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-                    <Button px={1} onClick={toggleColorMode}>
+                    <Button px={1} mx={4} onClick={toggleColorMode}>
                         {colorMode === 'light' ? <MoonIcon /> : <SunIcon />}
                     </Button>
                     <IconButton
@@ -114,7 +114,14 @@ export default function NavBar() {
                     <Box pb={4} display={{ md: 'none' }}>
                         <Stack as={'nav'} spacing={4}>
                             {Links.map((page) => (
-                                <NavLink key={page.name} id={page.id} to={page.to}>{page.name}</NavLink>
+                                <NavLink
+                                    page={page}
+                                    key={page.name} 
+                                    id={page.id} 
+                                    to={page.to}
+                                >
+                                    {page.name}
+                                    </NavLink>
                             ))}
                         </Stack>
                     </Box>

@@ -1,4 +1,4 @@
-import { Container, Heading, Card, Tooltip, CardBody, CardFooter, Stack, Divider, ButtonGroup, Button, Text, Image, Icon, Grid, HStack } from '@chakra-ui/react'
+import { Container, Heading, Card, Tooltip, CardBody, CardFooter, Stack, Divider, ButtonGroup, Button, Text, Image, Icon, SimpleGrid, HStack } from '@chakra-ui/react'
 import { FaGithub, FaJs, FaNodeJs, FaBootstrap, FaHtml5, FaCss3Alt, FaReact, FaYarn } from 'react-icons/fa'
 import { SiExpress, SiChakraui, SiMysql, SiSequelize, SiTypescript, SiDotenv, SiHandlebarsdotjs, SiBulma, SiNextdotjs, SiDirectus, SiInsomnia, SiMongodb, SiMongoose } from 'react-icons/si'
 import { DiMaterializecss } from 'react-icons/di'
@@ -13,7 +13,7 @@ const ProjectGitHubButton = ({
       colorScheme='blue'
       href={href}
       leftIcon={<FaGithub />}>
-      GitHub Repo
+      Repo
     </Button>
   )
 }
@@ -33,14 +33,13 @@ const DeployedSiteButton = ({
   )
 }
 
-
 export default function Portfolio() {
   return (
     <Container maxW='container.lg' mb={10}>
       <Heading>
         Portfolio
       </Heading>
-      <Grid templateColumns='repeat(3, 1fr)' gap={6}>
+      <SimpleGrid columns={{lg: 3, md: 2, sm: 1}} spacing={4}>
         <Card maxW='445px' m={3}>
           <CardBody>
             <Image
@@ -58,7 +57,7 @@ export default function Portfolio() {
                 When finished, you can click the view order button,
                 Look over your order to ensure it is what you desire and the click the confirm order button.
               </Text>
-              <Text>Technologies used:</Text>
+              <Heading size='sm'>Technologies used:</Heading>
               <HStack>
                 <Tooltip label='JavaScript' fontSize='md'>
                   <span>
@@ -95,17 +94,12 @@ export default function Portfolio() {
                     <Icon as={FaNodeJs} boxSize={6}></Icon>
                   </span>
                 </Tooltip>
-                <Tooltip label='dotenv' fontSize='md'>
-                  <span>
-                    <Icon as={SiDotenv} boxSize={6}></Icon>
-                  </span>
-                </Tooltip>
               </HStack>
             </Stack>
           </CardBody>
           <Divider />
           <CardFooter>
-            <ButtonGroup spacing='2'>
+            <ButtonGroup spacing='1'>
               <ProjectGitHubButton href={'https://github.com/esbev/Restaurant'} />
               <DeployedSiteButton href={'https://restaurant-express-c9c955225096.herokuapp.com/'} />
             </ButtonGroup>
@@ -125,7 +119,7 @@ export default function Portfolio() {
                 Users can save any text inputs in the text editor and it will save into a database when the user clicks out of the application.
                 This application can also function offline since the data in the app is stored locally through IndexedDB.
               </Text>
-              <Text>Technologies used:</Text>
+              <Heading size='sm'>Technologies used:</Heading>
               <HStack>
                 <Tooltip label='JavaScript' fontSize='md'>
                   <span>
@@ -170,7 +164,7 @@ export default function Portfolio() {
                 They can add, edit and delete posts.
                 They can also add comments to other posts.
               </Text>
-              <Text>Technologies used:</Text>
+              <Heading size='sm'>Technologies used:</Heading>
               <HStack>
                 <Tooltip label='JavaScript' fontSize='md'>
                   <span>
@@ -232,7 +226,7 @@ export default function Portfolio() {
                 This is a Social Media API that can add, update and remove users and thoughts into the database.
                 You can also create and remove friends and reactions to the associated user and thought respectively.
               </Text>
-              <Text>Technologies used:</Text>
+              <Heading size='sm'>Technologies used:</Heading>
               <HStack>
                 <Tooltip label='JavaScript' fontSize='md'>
                   <span>
@@ -283,7 +277,7 @@ export default function Portfolio() {
                 It provides music connoisseurs easy access to information on their favorite local artists.
                 The site highlights artists with their bios and YouTube videos, then directs users to Open Street Map for a list of and directions to performance venues.
               </Text>
-              <Text>Technologies used:</Text>
+              <Heading size='sm'>Technologies used:</Heading>
               <HStack>
                 <Tooltip label='JavaScript' fontSize='md'>
                   <span>
@@ -332,7 +326,7 @@ export default function Portfolio() {
                 I started on the project shortly after the creator deployed it.
                 I am still learning the technologies, but I will be an occasional contributor.
               </Text>
-              <Text>Technologies used:</Text>
+              <Heading size='sm'>Technologies used:</Heading>
               <HStack>
                 <Tooltip label='React' fontSize='md'>
                   <span>
@@ -374,7 +368,7 @@ export default function Portfolio() {
             </ButtonGroup>
           </CardFooter>
         </Card>
-      </Grid>
+      </SimpleGrid>
     </Container>
   );
 }
