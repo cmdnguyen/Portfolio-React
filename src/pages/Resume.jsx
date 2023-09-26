@@ -1,6 +1,21 @@
-import { Container, Heading, Link, Text, Tooltip, Icon, HStack } from '@chakra-ui/react'
+import { Container, Heading, Button, Text, Tooltip, Icon, HStack } from '@chakra-ui/react'
 import { FaReact, FaHtml5, FaJs, FaCss3Alt, FaBootstrap, FaNodeJs } from 'react-icons/fa'
 import { SiExpress, SiChakraui, SiMysql, SiSequelize, SiMongodb, SiMongoose } from 'react-icons/si'
+
+const downloadPDFButton = () => {
+  // using Java Script method to get PDF file
+  fetch('CatherineNguyenResume.pdf').then(response => {
+    response.blob().then(blob => {
+      // Creating new object of PDF file
+      const fileURL = window.URL.createObjectURL(blob);
+      // Setting various property values
+      let alink = document.createElement('a');
+      alink.href = fileURL;
+      alink.download = 'CatherineNguyenResume.pdf';
+      alink.click();
+    })
+  })
+}
 
 export default function Resume() {
   return (
@@ -8,13 +23,10 @@ export default function Resume() {
       <Heading>
         Resume
       </Heading>
-      <Container my={1}>
-        <Text>
-          Here's a {' '}
-          <Link color='teal.500' href='#'>
-            link to download my resume
-          </Link>
-        </Text>
+      <Container my={3}>
+        <Button onClick={downloadPDFButton}>
+          Download Resume
+        </Button>
       </Container>
       <Container my={1}>
         <Text>Here are some of my technical skills:</Text>
