@@ -9,7 +9,7 @@ This site is used to showcase my latest projects as a developer to potential emp
 
 This is my first project using React and Chakra UI. At first, I thought they both have a steep learning curve. I read the documentation on Chakra UI and applied the examples in my project. Once I got used to it, I was able to apply responsive styling in the portfolio.
 
-Here's the link to the website: 
+Here's the link to the website: https://cmdnguyen.netlify.app/
 
 ## Table of Contents 
 

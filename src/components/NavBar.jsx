@@ -18,24 +18,24 @@ import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 const Links = [
     {
-        id: "about",
-        name: "About Me",
-        to: "/",
+        id: 'about',
+        name: 'About Me',
+        to: '/',
     },
     {
-        id: "portfolio",
+        id: 'portfolio',
         name: "Portfolio",
-        to: "/Portfolio"
+        to: "/portfolio"
     },
     {
-        id: "contact",
-        name: "Contact",
-        to: "/Contact"
+        id: 'contact',
+        name: 'Contact',
+        to: '/contact'
     },
     {
-        id: "resume",
-        name: "Resume",
-        to: "/Resume"
+        id: 'resume',
+        name: 'Resume',
+        to: '/resume'
     }
 ];
 
