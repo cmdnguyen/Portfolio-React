@@ -273,9 +273,9 @@ export default function Portfolio() {
             <Stack mt='6' spacing='3'>
               <Heading size='md'>Scream Austin</Heading>
               <Text>
-                Scream Austin is a website that showcases local Austin, Texas artists and venues.
+                This is a website that showcases local Austin, Texas artists and venues.
                 It provides music connoisseurs easy access to information on their favorite local artists.
-                The site highlights artists with their bios and YouTube videos, then directs users to Open Street Map for a list of and directions to performance venues.
+                The site highlights artists with their bios and YouTube videos.
               </Text>
               <Heading size='sm'>Technologies used:</Heading>
               <HStack>

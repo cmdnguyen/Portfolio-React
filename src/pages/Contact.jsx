@@ -10,6 +10,7 @@ import {
   WrapItem,
   FormControl,
   FormLabel,
+  FormErrorMessage,
   Input,
   InputGroup,
   InputLeftElement,
@@ -20,6 +21,8 @@ import {
   MdEmail, MdOutlineEmail,
 } from 'react-icons/md'
 import { FaUserAlt, FaPhoneAlt } from 'react-icons/fa'
+
+import { useState } from 'react';
 
 const ContactButton = ({
   children,
@@ -47,7 +50,24 @@ const ContactButton = ({
   );
 };
 
+
+
+
 export default function Contact() {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    alert(`Message sent`);
+  };
+
+  const handleNameChange = (event) => setName(event.target.value)
+  const handleEmailChange = (event) => setEmail(event.target.value)
+  const handleMessageChange = (event) => setMessage(event.target.value)
+
+
   return (
     <Container maxW="full" mt={0} centerContent overflow="hidden">
       <Flex>
@@ -59,7 +79,7 @@ export default function Contact() {
             <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
               <WrapItem>
                 <Box>
-                <Heading>Contact</Heading>
+                  <Heading>Contact</Heading>
                   <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
                     Fill the form below to contact
                   </Text>
@@ -84,39 +104,68 @@ export default function Contact() {
                 <Box bg="white" borderRadius="lg">
                   <Box m={8} color="#0B0E3F">
                     <VStack spacing={5}>
-                      <FormControl id="name" isRequired>
-                        <FormLabel>Your Name</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement pointerEvents="none">
-                            <FaUserAlt color="gray.800" />
-                          </InputLeftElement>
-                          <Input type="text" size="md" />
-                        </InputGroup>
-                      </FormControl>
-                      <FormControl id="email" isRequired>
-                        <FormLabel>Mail</FormLabel>
-                        <InputGroup borderColor="#E0E1E7">
-                          <InputLeftElement pointerEvents="none">
-                            <MdOutlineEmail color="gray.800" />
-                          </InputLeftElement>
-                          <Input type="text" size="md" />
-                        </InputGroup>
-                      </FormControl>
-                      <FormControl id="message" isRequired>
-                        <FormLabel>Message</FormLabel>
-                        <Textarea
-                          borderColor="gray.300"
-                          _hover={{
-                            borderRadius: 'gray.300',
-                          }}
-                          placeholder="message"
-                        />
-                      </FormControl>
-                      <FormControl id="name" float="right">
-                        <Button variant="solid" bg="#0D74FF" color="white" _hover={{}}>
-                          Send Message
-                        </Button>
-                      </FormControl>
+                      <form onSubmit={handleSubmit}>
+                        <FormControl id="name" isRequired isInvalid={!name}>
+                          <FormLabel>Your Name</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement pointerEvents="none">
+                              <FaUserAlt color="gray.800" />
+                            </InputLeftElement>
+                            <Input
+                              type="text"
+                              size="md"
+                              onChange={handleNameChange}
+                            />
+                          </InputGroup>
+                          {name ? (
+                            ''
+                          ) : (
+                            <FormErrorMessage>Name is required.</FormErrorMessage>
+                          )}
+                        </FormControl>
+
+                        <FormControl id="email" isRequired isInvalid={!email}>
+                          <FormLabel>Email</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement pointerEvents="none">
+                              <MdOutlineEmail color="gray.800" />
+                            </InputLeftElement>
+                            <Input
+                              type="email"
+                              size="md"
+                              
+                              onChange={handleEmailChange}
+                            />
+                          </InputGroup>
+                          {email ? (
+                            ''
+                          ) : (
+                            <FormErrorMessage>Email is required.</FormErrorMessage>
+                          )}
+                        </FormControl>
+
+                        <FormControl id="message" isRequired isInvalid={!message}>
+                          <FormLabel>Message</FormLabel>
+                          <Textarea
+                            borderColor="gray.300"
+                            _hover={{
+                              borderRadius: 'gray.300',
+                            }}
+                            placeholder="message"
+                            onChange={handleMessageChange}
+                          />
+                          {message ? (
+                            ''
+                          ) : (
+                            <FormErrorMessage>Message is required.</FormErrorMessage>
+                          )}
+                        </FormControl>
+                        <FormControl id="name" float="right">
+                          <Button type='submit' variant="solid" bg="#0D74FF" color="white" _hover={{}}>
+                            Submit
+                          </Button>
+                        </FormControl>
+                      </form>
                     </VStack>
                   </Box>
                 </Box>
