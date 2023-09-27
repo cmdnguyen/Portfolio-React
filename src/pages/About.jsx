@@ -2,13 +2,27 @@ import { Text, Container, Heading, Icon, Tooltip, Image, Flex, SimpleGrid } from
 import { FaReact, FaHtml5, FaJs, FaCss3Alt, FaBootstrap, FaNodeJs } from 'react-icons/fa'
 import { SiExpress, SiChakraui, SiMysql, SiSequelize, SiMongodb, SiMongoose } from 'react-icons/si'
 
+const SkillToolTip = ({
+  children,
+  label
+}) => {
+  return (
+    <Tooltip
+      label={label}
+      fontSize='md'>
+      {children}
+    </Tooltip>
+  )
+}
+
+
+
 export default function About() {
   return (
     <Container maxW='container.md' mb={10}>
       <Heading>
         About Me
       </Heading>
-      <br />
       <Flex
         direction={{ base: 'column', md: 'row' }}
         justify={{ base: 'center', md: 'space-between' }}
@@ -36,71 +50,68 @@ export default function About() {
           </Text>
           <Text>Here are some of my technical skills:</Text>
           <SimpleGrid columns={{ base: 8, sm: 10, md: 15, lg: 15 }} spacing={5}>
-            <Tooltip label='React' fontSize='md'>
+            <SkillToolTip label={'React'}>
               <span>
-                <Icon as={FaReact} boxSize={6}></Icon>
+                <FaReact size={25} />
               </span>
-            </Tooltip>
-            <Tooltip label='JavaScript' fontSize='md'>
+            </SkillToolTip>
+            <SkillToolTip label={'JavaScript'}>
               <span>
-                <Icon as={FaJs} boxSize={6}></Icon>
+                <FaJs size={25} />
               </span>
-            </Tooltip>
-            <Tooltip label='HTML5' fontSize='md'>
+            </SkillToolTip>
+            <SkillToolTip label={'HTML5'}>
               <span>
-                <Icon as={FaHtml5} boxSize={6}></Icon>
+                <FaHtml5 size={25} />
               </span>
-            </Tooltip>
-            <Tooltip label='CSS3' fontSize='md'>
+            </SkillToolTip>
+            <SkillToolTip label={'CSS3'}>
               <span>
-                <Icon as={FaCss3Alt} boxSize={6}></Icon>
+                <FaCss3Alt size={25} />
               </span>
-            </Tooltip>
-            <Tooltip label='Bootstrap' fontSize='md'>
+            </SkillToolTip>
+            <SkillToolTip label={'Boostrap'}>
               <span>
-                <Icon as={FaBootstrap} boxSize={6}></Icon>
+                <FaBootstrap size={25} />
               </span>
-            </Tooltip>
-            <Tooltip label='Chakra UI' fontSize='md'>
+            </SkillToolTip>
+            <SkillToolTip label={'Chakra UI'}>
               <span>
-                <Icon as={SiChakraui} boxSize={6}></Icon>
+                <SiChakraui size={25} />
               </span>
-            </Tooltip>
-            <Tooltip label='Node.js' fontSize='md'>
+            </SkillToolTip>
+            <SkillToolTip label={'Node.js'}>
               <span>
-                <Icon as={FaNodeJs} boxSize={6}></Icon>
+                <FaNodeJs size={25} />
               </span>
-            </Tooltip>
-            <Tooltip label='Express.js' fontSize='md'>
+            </SkillToolTip>
+            <SkillToolTip label={'Express.js'}>
               <span>
-                <Icon as={SiExpress} boxSize={6}></Icon>
+                <SiExpress size={25} />
               </span>
-            </Tooltip>
-            <Tooltip label='MySQL' fontSize='md'>
+            </SkillToolTip>
+            <SkillToolTip label={'MySQL'}>
               <span>
-                <Icon as={SiMysql} boxSize={6}></Icon>
+                <SiMysql size={25} />
               </span>
-            </Tooltip>
-            <Tooltip label='Sequelize' fontSize='md'>
+            </SkillToolTip>
+            <SkillToolTip label={'Sequelize'}>
               <span>
-                <Icon as={SiSequelize} boxSize={6}></Icon>
+                <SiSequelize size={25} />
               </span>
-            </Tooltip>
-
-            <Tooltip label='MongoDB' fontSize='md'>
+            </SkillToolTip>
+            <SkillToolTip label={'MongoDB'}>
               <span>
-                <Icon as={SiMongodb} boxSize={6}></Icon>
+                <SiMongodb size={25} />
               </span>
-            </Tooltip>
-            <Tooltip label='Mongoose' fontSize='md'>
+            </SkillToolTip>
+            <SkillToolTip label={'Mongoose'}>
               <span>
-                <Icon as={SiMongoose} boxSize={6}></Icon>
+                <SiMongoose size={25} />
               </span>
-            </Tooltip>
-        
+            </SkillToolTip>
           </SimpleGrid>
         </Container>
-        
       </Flex>
     </Container>
   );

@@ -54,19 +54,36 @@ const ContactButton = ({
 
 
 export default function Contact() {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+
+  // Initialize error states to null
+  const [formErrors, setFormErrors] = useState({
+    name: null,
+    email: null,
+    message: null
+  });
 
   const handleSubmit = event => {
     event.preventDefault();
     alert(`Message sent`);
   };
 
-  const handleNameChange = (event) => setName(event.target.value)
-  const handleEmailChange = (event) => setEmail(event.target.value)
-  const handleMessageChange = (event) => setMessage(event.target.value)
+  const handleFormChange = event => {
+    setForm({
+      ...form,
+      [event.target.id]: event.target.value
+    });
 
+    // Clear the error message when the user starts typing
+    setFormErrors({
+      ...formErrors,
+      [event.target.id]: null
+    });
+  };
 
   return (
     <Container maxW="full" mt={0} centerContent overflow="hidden">
@@ -105,7 +122,7 @@ export default function Contact() {
                   <Box m={8} color="#0B0E3F">
                     <VStack spacing={5}>
                       <form onSubmit={handleSubmit}>
-                        <FormControl id="name" isRequired isInvalid={!name}>
+                        <FormControl id="name" isRequired isInvalid={formErrors.name !== null}>
                           <FormLabel>Your Name</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
                             <InputLeftElement pointerEvents="none">
@@ -114,17 +131,15 @@ export default function Contact() {
                             <Input
                               type="text"
                               size="md"
-                              onChange={handleNameChange}
+                              onChange={handleFormChange}
                             />
                           </InputGroup>
-                          {name ? (
-                            ''
-                          ) : (
+                          {formErrors.name ? (
                             <FormErrorMessage>Name is required.</FormErrorMessage>
-                          )}
+                          ) : null}
                         </FormControl>
 
-                        <FormControl id="email" isRequired isInvalid={!email}>
+                        <FormControl id="email" isRequired isInvalid={formErrors.email !== null}>
                           <FormLabel>Email</FormLabel>
                           <InputGroup borderColor="#E0E1E7">
                             <InputLeftElement pointerEvents="none">
@@ -133,18 +148,16 @@ export default function Contact() {
                             <Input
                               type="email"
                               size="md"
-                              
-                              onChange={handleEmailChange}
+                              onChange={handleFormChange}
                             />
                           </InputGroup>
-                          {email ? (
-                            ''
-                          ) : (
+                          {formErrors.email ? (
                             <FormErrorMessage>Email is required.</FormErrorMessage>
-                          )}
+                          ) : null}
                         </FormControl>
 
-                        <FormControl id="message" isRequired isInvalid={!message}>
+
+                        <FormControl id="message" isRequired isInvalid={form.message}>
                           <FormLabel>Message</FormLabel>
                           <Textarea
                             borderColor="gray.300"
@@ -152,9 +165,9 @@ export default function Contact() {
                               borderRadius: 'gray.300',
                             }}
                             placeholder="message"
-                            onChange={handleMessageChange}
+                            onChange={handleFormChange}
                           />
-                          {message ? (
+                          {form.message ? (
                             ''
                           ) : (
                             <FormErrorMessage>Message is required.</FormErrorMessage>
