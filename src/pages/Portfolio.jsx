@@ -2,7 +2,6 @@ import {
   Container,
   Heading,
   Card,
-  Tooltip,
   CardBody,
   CardFooter,
   Stack,
@@ -12,37 +11,17 @@ import {
   Text,
   Image,
   SimpleGrid,
-  HStack
 } from '@chakra-ui/react'
 
-import {
-  FaGithub,
-  FaJs,
-  FaNodeJs,
-  FaBootstrap,
-  FaHtml5,
-  FaCss3Alt,
-  FaReact,
-  FaYarn
-} from 'react-icons/fa'
+import {FaGithub} from 'react-icons/fa'
 
-import {
-  SiExpress,
-  SiChakraui,
-  SiMysql,
-  SiSequelize,
-  SiTypescript,
-  SiDotenv,
-  SiHandlebarsdotjs,
-  SiBulma,
-  SiNextdotjs,
-  SiDirectus,
-  SiInsomnia,
-  SiMongodb,
-  SiMongoose
-} from 'react-icons/si'
-
-import { DiMaterializecss } from 'react-icons/di'
+import { 
+  DonBoscoHiepSiSkills, 
+  RestaurantExpressSkills, 
+  ScreamAustinSkills, 
+  SocialNetworkAPISkills, 
+  TechBlogSkills, 
+  TextEditorSkills } from '../components/Skills'
 
 const ProjectGitHubButton = ({
   href,
@@ -73,19 +52,6 @@ const DeployedSiteButton = ({
     >
       Website
     </Button>
-  )
-}
-
-const SkillToolTip = ({
-  children,
-  label
-}) => {
-  return (
-    <Tooltip
-      label={label}
-      fontSize='md'>
-      {children}
-    </Tooltip>
   )
 }
 
@@ -125,44 +91,7 @@ export default function Portfolio() {
                 When finished, you can click the view order button,
                 Look over your order to ensure it is what you desire and the click the confirm order button.
               </Text>
-              <Heading size='sm'>Technologies used:</Heading>
-              <HStack id='portfolio-skills'>
-                <SkillToolTip label={'JavaScript'}>
-                  <span>
-                    <FaJs size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Express.js'}>
-                  <span>
-                    <SiExpress size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Handlebars.js'}>
-                  <span>
-                    <SiHandlebarsdotjs size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Materialize CSS'}>
-                  <span>
-                    <DiMaterializecss size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'MySQL'}>
-                  <span>
-                    <SiMysql size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Sequelize'}>
-                  <span>
-                    <SiSequelize size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Node.js'}>
-                  <span>
-                    <FaNodeJs size={25} />
-                  </span>
-                </SkillToolTip>
-              </HStack>
+              <RestaurantExpressSkills />
             </Stack>
           </CardBody>
           <Divider />
@@ -194,24 +123,7 @@ export default function Portfolio() {
                 Users can save any text inputs in the text editor and it will save into a database when the user clicks out of the application.
                 This application can also function offline since the data in the app is stored locally through IndexedDB.
               </Text>
-              <Heading size='sm'>Technologies used:</Heading>
-              <HStack id='portfolio-skills'>
-                <SkillToolTip label={'JavaScript'}>
-                  <span>
-                    <FaJs size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Express.js'}>
-                  <span>
-                    <SiExpress size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Node.js'}>
-                  <span>
-                    <FaNodeJs size={25} />
-                  </span>
-                </SkillToolTip>
-              </HStack>
+              <TextEditorSkills />
             </Stack>
           </CardBody>
           <Divider />
@@ -246,45 +158,7 @@ export default function Portfolio() {
                 They can add, edit and delete posts.
                 They can also add comments to other posts.
               </Text>
-              <Heading size='sm'>Technologies used:</Heading>
-              <HStack id='portfolio-skills'>
-                <SkillToolTip label={'JavaScript'}>
-                  <span>
-                    <FaJs size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Express.js'}>
-                  <span>
-                    <SiExpress size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Bootstrap'}>
-                  <span>
-                    <FaBootstrap size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'MySQL'}>
-                  <span>
-                    <SiMysql size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Sequelize'}>
-                  <span>
-                    <SiSequelize size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'dotenv'}>
-                  <span>
-                    <SiDotenv size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Handlebars.js'}>
-                  <span>
-                    <SiHandlebarsdotjs size={25} />
-                  </span>
-                </SkillToolTip>
-
-              </HStack>
+              <TechBlogSkills />
             </Stack>
           </CardBody>
           <Divider />
@@ -315,34 +189,7 @@ export default function Portfolio() {
                 This is a Social Media API that can add, update and remove users and thoughts into the database.
                 You can also create and remove friends and reactions to the associated user and thought respectively.
               </Text>
-              <Heading size='sm'>Technologies used:</Heading>
-              <HStack id='portfolio-sklls'>
-                <SkillToolTip label={'JavaScript'}>
-                  <span>
-                    <FaJs size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'MongoDB'}>
-                  <span>
-                    <SiMongodb size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Mongoose'}>
-                  <span>
-                    <SiMongoose size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Node.js'}>
-                  <span>
-                    <FaNodeJs size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Insomnia'}>
-                  <span>
-                    <SiInsomnia size={25} />
-                  </span>
-                </SkillToolTip>
-              </HStack>
+              <SocialNetworkAPISkills />
             </Stack>
           </CardBody>
           <Divider />
@@ -373,29 +220,7 @@ export default function Portfolio() {
                 It provides music connoisseurs easy access to information on their favorite local artists.
                 The site highlights artists with their bios and YouTube videos.
               </Text>
-              <Heading size='sm'>Technologies used:</Heading>
-              <HStack id='portfolio-skills'>
-                <SkillToolTip label={'JavaScript'}>
-                  <span>
-                    <FaJs size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'HTML5'}>
-                  <span>
-                    <FaHtml5 size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'CSS3'}>
-                  <span>
-                    <FaCss3Alt size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Bulma CSS'}>
-                  <span>
-                    <SiBulma size={25} />
-                  </span>
-                </SkillToolTip>
-              </HStack>
+              <ScreamAustinSkills />
             </Stack>
           </CardBody>
           <Divider />
@@ -429,39 +254,7 @@ export default function Portfolio() {
                 I started on the project shortly after the creator deployed it.
                 I am still learning the technologies, but I will be an occasional contributor.
               </Text>
-              <Heading size='sm'>Technologies used:</Heading>
-              <HStack id='portfolio-skills'>
-                <SkillToolTip label={'React'}>
-                  <span>
-                    <FaReact size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Chakra UI'}>
-                  <span>
-                    <SiChakraui size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'TypeScript'}>
-                  <span>
-                    <SiTypescript size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Next.js'}>
-                  <span>
-                    <SiNextdotjs size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Directus'}>
-                  <span>
-                    <SiDirectus size={25} />
-                  </span>
-                </SkillToolTip>
-                <SkillToolTip label={'Yarn'}>
-                  <span>
-                    <FaYarn size={25} />
-                  </span>
-                </SkillToolTip>
-              </HStack>
+              <DonBoscoHiepSiSkills />
             </Stack>
           </CardBody>
           <Divider />

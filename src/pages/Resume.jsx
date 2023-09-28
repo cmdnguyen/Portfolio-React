@@ -1,6 +1,5 @@
-import { Container, Heading, Button, Text, Tooltip, Icon, SimpleGrid } from '@chakra-ui/react'
-import { FaReact, FaHtml5, FaJs, FaCss3Alt, FaBootstrap, FaNodeJs } from 'react-icons/fa'
-import { SiExpress, SiChakraui, SiMysql, SiSequelize, SiMongodb, SiMongoose } from 'react-icons/si'
+import { Container, Heading, Button } from '@chakra-ui/react'
+import MainSkills from '../components/Skills'
 
 // Download PDF Button Function
 const downloadPDFButton = () => {
@@ -18,18 +17,7 @@ const downloadPDFButton = () => {
   })
 }
 
-const SkillToolTip = ({
-  children,
-  label
-}) => {
-  return (
-    <Tooltip
-      label={label}
-      fontSize='md'>
-      {children}
-    </Tooltip>
-  )
-}
+
 
 export default function Resume() {
   return (
@@ -46,76 +34,7 @@ export default function Resume() {
       </Container>
 
       {/* Skills section */}
-      <Container my={1}>
-        <Text>Here are some of my technical skills:</Text>
-        <SimpleGrid
-          id='skill-grid'
-          columns={{ base: 8, sm: 10, md: 15, lg: 15 }}
-          spacing={5}
-        >
-          <SkillToolTip label={'React'}>
-            <span>
-              <FaReact size={25} />
-            </span>
-          </SkillToolTip>
-          <SkillToolTip label={'JavaScript'}>
-            <span>
-              <FaJs size={25} />
-            </span>
-          </SkillToolTip>
-          <SkillToolTip label={'HTML5'}>
-            <span>
-              <FaHtml5 size={25} />
-            </span>
-          </SkillToolTip>
-          <SkillToolTip label={'CSS3'}>
-            <span>
-              <FaCss3Alt size={25} />
-            </span>
-          </SkillToolTip>
-          <SkillToolTip label={'Bootstrap'}>
-            <span>
-              <FaBootstrap size={25} />
-            </span>
-          </SkillToolTip>
-          <SkillToolTip label={'Chakra UI'}>
-            <span>
-              <SiChakraui size={25} />
-            </span>
-          </SkillToolTip>
-          <SkillToolTip label={'Node.js'}>
-            <span>
-              <FaNodeJs size={25} />
-            </span>
-          </SkillToolTip>
-          <SkillToolTip label={'Express.js'}>
-            <span>
-              <SiExpress size={25} />
-            </span>
-          </SkillToolTip>
-          <SkillToolTip label={'MySQL'}>
-            <span>
-              <SiMysql size={25} />
-            </span>
-          </SkillToolTip>
-          <SkillToolTip label={'Sequelize'}>
-            <span>
-              <SiSequelize size={25} />
-            </span>
-          </SkillToolTip>
-          <SkillToolTip label={'MongoDB'}>
-            <span>
-              <SiMongodb size={25} />
-            </span>
-          </SkillToolTip>
-          <SkillToolTip label={'Mongoose'}>
-            <span>
-              <SiMongoose size={25} />
-            </span>
-          </SkillToolTip>
-        </SimpleGrid>
-      </Container>
-
+     <MainSkills/>
     </Container>
   );
 }
