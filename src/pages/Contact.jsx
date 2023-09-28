@@ -20,10 +20,8 @@ import {
 
 import { MdEmail, MdOutlineEmail, } from 'react-icons/md'
 import { FaUserAlt, FaPhoneAlt } from 'react-icons/fa'
-import { Formik, Field, Form, useFormik } from 'formik'
+import { useFormik } from 'formik'
 import * as Yup from 'yup'
-
-import { useState } from 'react';
 
 const ContactButton = ({
   children,
@@ -42,7 +40,7 @@ const ContactButton = ({
       justifyContent={'center'}
       as={'a'}
       href={href}
-      _hover={{ border: '2px solid #1C6FEB' }}
+      _hover={{ border: '2px solid white' }}
       leftIcon={leftIcon}
     >
       <VisuallyHidden>{label}</VisuallyHidden>
@@ -70,31 +68,31 @@ export default function Contact() {
       alert(JSON.stringify(values, null, 2));
       actions.resetForm()
     }
-  }
-  )
+  })
 
   return (
-    <Container maxW="full" mt={0} centerContent overflow="hidden">
+    <Container maxW="full" mt={5} centerContent overflow="hidden">
       <Flex>
 
         {/* Contact Box */}
         <Box
+          colorScheme='blue'
           borderRadius="lg"
           m={{ sm: 4, md: 16, lg: 10 }}
           p={{ sm: 5, md: 5, lg: 16 }}>
 
           {/* Left side of the contact box */}
           <Box p={4}>
-            <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
+            <Wrap spacing={{ base: 10, sm: 3, md: 5, lg: 10 }}>
               <WrapItem>
                 <Box>
                   <Heading>Contact</Heading>
-                  <Text mt={{ sm: 3, md: 3, lg: 5 }} color="gray.500">
+                  <Text my={{ sm: 3, md: 3, lg: 5 }}>
                     Fill the form below to contact
                   </Text>
                   {/* Personal Contact Info */}
-                  <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
-                    <VStack pl={0} spacing={1} alignItems="flex-start">
+                  <Box py={5}>
+                    <VStack>
                       <ContactButton href={'tel:+15042340916'}
                         leftIcon={<FaPhoneAlt size="20px" />}>
                         + 1 504 234-0916
@@ -116,6 +114,8 @@ export default function Contact() {
                 <Box bg="white" borderRadius="lg">
                   <Box m={8} color="#0B0E3F">
                     <VStack as='form' spacing={5} onSubmit={formik.handleSubmit}>
+
+                      {/* Name Field for submission */}
                       <FormControl isInvalid={formik.errors.submitName && formik.touched.submitName}>
                         <FormLabel>Name</FormLabel>
                         <InputGroup borderColor="#E0E1E7">
@@ -133,6 +133,7 @@ export default function Contact() {
                         <FormErrorMessage>{formik.errors.submitName}</FormErrorMessage>
                       </FormControl>
 
+                      {/* Email field for submission */}
                       <FormControl isInvalid={formik.errors.submitEmail && formik.touched.submitEmail}>
                         <FormLabel>Email</FormLabel>
                         <InputGroup borderColor="#E0E1E7">
@@ -152,6 +153,7 @@ export default function Contact() {
                         <FormErrorMessage>{formik.errors.submitEmail}</FormErrorMessage>
                       </FormControl>
 
+                      {/* Message Field for submission */}
                       <FormControl isInvalid={formik.errors.submitMessage && formik.touched.submitMessage}>
                         <FormLabel>Message</FormLabel>
                         <Textarea
@@ -161,7 +163,7 @@ export default function Contact() {
                           _hover={{
                             borderRadius: 'gray.300',
                           }}
-                          placeholder="message"
+                          placeholder="Enter Message Here"
                           onChange={formik.handleChange}
                           value={formik.values.message}
                           onBlur={formik.handleBlur}
