@@ -1,6 +1,47 @@
-import { Container, Heading, Card, Tooltip, CardBody, CardFooter, Stack, Divider, ButtonGroup, Button, Text, Image, Icon, SimpleGrid, HStack } from '@chakra-ui/react'
-import { FaGithub, FaJs, FaNodeJs, FaBootstrap, FaHtml5, FaCss3Alt, FaReact, FaYarn } from 'react-icons/fa'
-import { SiExpress, SiChakraui, SiMysql, SiSequelize, SiTypescript, SiDotenv, SiHandlebarsdotjs, SiBulma, SiNextdotjs, SiDirectus, SiInsomnia, SiMongodb, SiMongoose } from 'react-icons/si'
+import {
+  Container,
+  Heading,
+  Card,
+  Tooltip,
+  CardBody,
+  CardFooter,
+  Stack,
+  Divider,
+  ButtonGroup,
+  Button,
+  Text,
+  Image,
+  SimpleGrid,
+  HStack
+} from '@chakra-ui/react'
+
+import {
+  FaGithub,
+  FaJs,
+  FaNodeJs,
+  FaBootstrap,
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaYarn
+} from 'react-icons/fa'
+
+import {
+  SiExpress,
+  SiChakraui,
+  SiMysql,
+  SiSequelize,
+  SiTypescript,
+  SiDotenv,
+  SiHandlebarsdotjs,
+  SiBulma,
+  SiNextdotjs,
+  SiDirectus,
+  SiInsomnia,
+  SiMongodb,
+  SiMongoose
+} from 'react-icons/si'
+
 import { DiMaterializecss } from 'react-icons/di'
 
 const ProjectGitHubButton = ({
@@ -8,6 +49,7 @@ const ProjectGitHubButton = ({
 }) => {
   return (
     <Button
+      id='github-button'
       as={'a'}
       variant='solid'
       colorScheme='blue'
@@ -23,6 +65,7 @@ const DeployedSiteButton = ({
 }) => {
   return (
     <Button
+      id='deployed-site-button'
       as={'a'}
       variant='solid'
       colorScheme='blue'
@@ -33,16 +76,41 @@ const DeployedSiteButton = ({
   )
 }
 
+const SkillToolTip = ({
+  children,
+  label
+}) => {
+  return (
+    <Tooltip
+      label={label}
+      fontSize='md'>
+      {children}
+    </Tooltip>
+  )
+}
+
 export default function Portfolio() {
   return (
-    <Container maxW='container.lg' mb={10}>
-      <Heading>
+    <Container id='portfolio-page' maxW='container.lg' mb={10}>
+      <Heading id='portfolio-title'>
         Portfolio
       </Heading>
-      <SimpleGrid columns={{lg: 3, md: 2, sm: 1}} spacing={4}>
-        <Card maxW='445px' m={3}>
+
+      {/* Portfolio Grid */}
+      <SimpleGrid
+        id='portfolio-grid'
+        columns={{ lg: 3, md: 2, sm: 1 }}
+        spacing={4}
+      >
+        {/* Restaurant Express Project */}
+        <Card
+          id='restaurant-express-card'
+          maxW='400px'
+          m={3}
+        >
           <CardBody>
             <Image
+              id='restaurant-express-image'
               src='images/Restaurant Express.png'
               alt='Restaurant Express'
               borderRadius='lg'
@@ -58,42 +126,42 @@ export default function Portfolio() {
                 Look over your order to ensure it is what you desire and the click the confirm order button.
               </Text>
               <Heading size='sm'>Technologies used:</Heading>
-              <HStack>
-                <Tooltip label='JavaScript' fontSize='md'>
+              <HStack id='portfolio-skills'>
+                <SkillToolTip label={'JavaScript'}>
                   <span>
-                    <Icon as={FaJs} boxSize={6}></Icon>
+                    <FaJs size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Express.js' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Express.js'}>
                   <span>
-                    <Icon as={SiExpress} boxSize={6}></Icon>
+                    <SiExpress size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Handlebars.js' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Handlebars.js'}>
                   <span>
-                    <Icon as={SiHandlebarsdotjs} boxSize={6}></Icon>
+                    <SiHandlebarsdotjs size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Materialize CSS' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Materialize CSS'}>
                   <span>
-                    <Icon as={DiMaterializecss} boxSize={6}></Icon>
+                    <DiMaterializecss size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='MySQL' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'MySQL'}>
                   <span>
-                    <Icon as={SiMysql} boxSize={6}></Icon>
+                    <SiMysql size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Sequelize' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Sequelize'}>
                   <span>
-                    <Icon as={SiSequelize} boxSize={6}></Icon>
+                    <SiSequelize size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Node.js' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Node.js'}>
                   <span>
-                    <Icon as={FaNodeJs} boxSize={6}></Icon>
+                    <FaNodeJs size={25} />
                   </span>
-                </Tooltip>
+                </SkillToolTip>
               </HStack>
             </Stack>
           </CardBody>
@@ -105,9 +173,16 @@ export default function Portfolio() {
             </ButtonGroup>
           </CardFooter>
         </Card>
-        <Card maxW='sm' m={3}>
+
+        {/* Text Editor Project */}
+        <Card
+          id='text-editor-card'
+          maxW='400px'
+          m={3}
+        >
           <CardBody>
             <Image
+              id='text-editor-image'
               src='images/JATE-Demo.png'
               alt='Just Another Text Editor'
               borderRadius='lg'
@@ -120,22 +195,22 @@ export default function Portfolio() {
                 This application can also function offline since the data in the app is stored locally through IndexedDB.
               </Text>
               <Heading size='sm'>Technologies used:</Heading>
-              <HStack>
-                <Tooltip label='JavaScript' fontSize='md'>
+              <HStack id='portfolio-skills'>
+                <SkillToolTip label={'JavaScript'}>
                   <span>
-                    <Icon as={FaJs} boxSize={6}></Icon>
+                    <FaJs size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Express.js' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Express.js'}>
                   <span>
-                    <Icon as={SiExpress} boxSize={6}></Icon>
+                    <SiExpress size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Node.js' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Node.js'}>
                   <span>
-                    <Icon as={FaNodeJs} boxSize={6}></Icon>
+                    <FaNodeJs size={25} />
                   </span>
-                </Tooltip>
+                </SkillToolTip>
               </HStack>
             </Stack>
           </CardBody>
@@ -147,9 +222,16 @@ export default function Portfolio() {
             </ButtonGroup>
           </CardFooter>
         </Card>
-        <Card maxW='sm' m={3}>
+
+        {/* Tech Blog Project */}
+        <Card
+          id='tech-blog-card'
+          maxW='400px'
+          m={3}
+        >
           <CardBody>
             <Image
+              id='tech-blog-image'
               src='images/Tech Blog.png'
               alt='Tech Blog'
               borderRadius='lg'
@@ -165,42 +247,43 @@ export default function Portfolio() {
                 They can also add comments to other posts.
               </Text>
               <Heading size='sm'>Technologies used:</Heading>
-              <HStack>
-                <Tooltip label='JavaScript' fontSize='md'>
+              <HStack id='portfolio-skills'>
+                <SkillToolTip label={'JavaScript'}>
                   <span>
-                    <Icon as={FaJs} boxSize={6}></Icon>
+                    <FaJs size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Express.js' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Express.js'}>
                   <span>
-                    <Icon as={SiExpress} boxSize={6}></Icon>
+                    <SiExpress size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Bootstrap' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Bootstrap'}>
                   <span>
-                    <Icon as={FaBootstrap} boxSize={6}></Icon>
+                    <FaBootstrap size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='MySQL' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'MySQL'}>
                   <span>
-                    <Icon as={SiMysql} boxSize={6}></Icon>
+                    <SiMysql size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Sequelize' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Sequelize'}>
                   <span>
-                    <Icon as={SiSequelize} boxSize={6}></Icon>
+                    <SiSequelize size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='dotenv' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'dotenv'}>
                   <span>
-                    <Icon as={SiDotenv} boxSize={6}></Icon>
+                    <SiDotenv size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Handlebars.js' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Handlebars.js'}>
                   <span>
-                    <Icon as={SiHandlebarsdotjs} boxSize={6}></Icon>
+                    <SiHandlebarsdotjs size={25} />
                   </span>
-                </Tooltip>
+                </SkillToolTip>
+
               </HStack>
             </Stack>
           </CardBody>
@@ -213,9 +296,15 @@ export default function Portfolio() {
           </CardFooter>
         </Card>
 
-        <Card maxW='sm' m={3}>
+        {/* Social Network API Project */}
+        <Card
+          id='social-network-card'
+          maxW='400px'
+          m={3}
+        >
           <CardBody>
             <Image
+              id='social-network-image'
               src='images/Social Network API.png'
               alt='Social Network API'
               borderRadius='lg'
@@ -227,32 +316,32 @@ export default function Portfolio() {
                 You can also create and remove friends and reactions to the associated user and thought respectively.
               </Text>
               <Heading size='sm'>Technologies used:</Heading>
-              <HStack>
-                <Tooltip label='JavaScript' fontSize='md'>
+              <HStack id='portfolio-sklls'>
+                <SkillToolTip label={'JavaScript'}>
                   <span>
-                    <Icon as={FaJs} boxSize={6}></Icon>
+                    <FaJs size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='MongoDB' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'MongoDB'}>
                   <span>
-                    <Icon as={SiMongodb} boxSize={6}></Icon>
+                    <SiMongodb size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Mongoose' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Mongoose'}>
                   <span>
-                    <Icon as={SiMongoose} boxSize={6}></Icon>
+                    <SiMongoose size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Node.js' fontSize='md'>
-              <span>
-                <Icon as={FaNodeJs} boxSize={6}></Icon>
-              </span>
-            </Tooltip>
-                <Tooltip label='Insomnia' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Node.js'}>
                   <span>
-                    <Icon as={SiInsomnia} boxSize={6}></Icon>
+                    <FaNodeJs size={25} />
                   </span>
-                </Tooltip>
+                </SkillToolTip>
+                <SkillToolTip label={'Insomnia'}>
+                  <span>
+                    <SiInsomnia size={25} />
+                  </span>
+                </SkillToolTip>
               </HStack>
             </Stack>
           </CardBody>
@@ -263,9 +352,16 @@ export default function Portfolio() {
             </ButtonGroup>
           </CardFooter>
         </Card>
-        <Card maxW='sm' m={3}>
+
+        {/* Scream Austin Project */}
+        <Card
+          id='scream-austin-card'
+          maxW='400px'
+          m={3}
+        >
           <CardBody>
             <Image
+              id='scream-austin-image'
               src='images/Scream Austin.png'
               alt='Scream Austin'
               borderRadius='lg'
@@ -278,27 +374,27 @@ export default function Portfolio() {
                 The site highlights artists with their bios and YouTube videos.
               </Text>
               <Heading size='sm'>Technologies used:</Heading>
-              <HStack>
-                <Tooltip label='JavaScript' fontSize='md'>
+              <HStack id='portfolio-skills'>
+                <SkillToolTip label={'JavaScript'}>
                   <span>
-                    <Icon as={FaJs} boxSize={6}></Icon>
+                    <FaJs size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='HTML5' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'HTML5'}>
                   <span>
-                    <Icon as={FaHtml5} boxSize={6}></Icon>
+                    <FaHtml5 size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='CSS3' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'CSS3'}>
                   <span>
-                    <Icon as={FaCss3Alt} boxSize={6}></Icon>
+                    <FaCss3Alt size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Bulma CSS' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Bulma CSS'}>
                   <span>
-                    <Icon as={SiBulma} boxSize={6}></Icon>
+                    <SiBulma size={25} />
                   </span>
-                </Tooltip>
+                </SkillToolTip>
               </HStack>
             </Stack>
           </CardBody>
@@ -310,9 +406,16 @@ export default function Portfolio() {
             </ButtonGroup>
           </CardFooter>
         </Card>
-        <Card maxW='sm' m={3}>
+
+        {/* Don Bosco Hiep Si Project */}
+        <Card
+          id='don-bosco-hiep-si-card'
+          maxW='400px'
+          m={3}
+        >
           <CardBody>
             <Image
+              id='don-bosco-hiep-si-image'
               src='images/Don Bosco Hiep Si.png'
               alt='Don Bosco Hiep Si'
               borderRadius='lg'
@@ -327,37 +430,37 @@ export default function Portfolio() {
                 I am still learning the technologies, but I will be an occasional contributor.
               </Text>
               <Heading size='sm'>Technologies used:</Heading>
-              <HStack>
-                <Tooltip label='React' fontSize='md'>
+              <HStack id='portfolio-skills'>
+                <SkillToolTip label={'React'}>
                   <span>
-                    <Icon as={FaReact} boxSize={6}></Icon>
+                    <FaReact size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Chakra UI' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Chakra UI'}>
                   <span>
-                    <Icon as={SiChakraui} boxSize={6}></Icon>
+                    <SiChakraui size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='TypeScript' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'TypeScript'}>
                   <span>
-                    <Icon as={SiTypescript} boxSize={6}></Icon>
+                    <SiTypescript size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Next.js' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Next.js'}>
                   <span>
-                    <Icon as={SiNextdotjs} boxSize={6}></Icon>
+                    <SiNextdotjs size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Directus' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Directus'}>
                   <span>
-                    <Icon as={SiDirectus} boxSize={6}></Icon>
+                    <SiDirectus size={25} />
                   </span>
-                </Tooltip>
-                <Tooltip label='Yarn' fontSize='md'>
+                </SkillToolTip>
+                <SkillToolTip label={'Yarn'}>
                   <span>
-                    <Icon as={FaYarn} boxSize={6}></Icon>
+                    <FaYarn size={25} />
                   </span>
-                </Tooltip>
+                </SkillToolTip>
               </HStack>
             </Stack>
           </CardBody>
@@ -368,6 +471,7 @@ export default function Portfolio() {
             </ButtonGroup>
           </CardFooter>
         </Card>
+
       </SimpleGrid>
     </Container>
   );

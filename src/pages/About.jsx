@@ -1,4 +1,4 @@
-import { Text, Container, Heading, Icon, Tooltip, Image, Flex, SimpleGrid } from '@chakra-ui/react'
+import { Text, Container, Heading, Tooltip, Image, Flex, SimpleGrid } from '@chakra-ui/react'
 import { FaReact, FaHtml5, FaJs, FaCss3Alt, FaBootstrap, FaNodeJs } from 'react-icons/fa'
 import { SiExpress, SiChakraui, SiMysql, SiSequelize, SiMongodb, SiMongoose } from 'react-icons/si'
 
@@ -19,22 +19,25 @@ const SkillToolTip = ({
 
 export default function About() {
   return (
-    <Container maxW='container.md' mb={10}>
-      <Heading>
+    <Container id='about-page' maxW='container.md' mb={10}>
+      <Heading id='about-title'>
         About Me
       </Heading>
+      {/* Flex container with headshot, bio and skill section */}
       <Flex
+        id='About-Me-Section'
         direction={{ base: 'column', md: 'row' }}
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}
       >
         <Image
+          id='headshot'
           borderRadius='full'
           boxSize='200px'
           src='/images/CatherineNguyen_2018_SQHeadshot.jpg'
           alt='Catherine Nguyen'
         />
-        <Container>
+        <Container id='bio-section'>
           <Text p={3}>
             Hi, my name is Catherine Nguyen. Welcome to my portfolio page.
             I am currently learning full stack web development in a coding bootcamp.
@@ -48,8 +51,14 @@ export default function About() {
             Feel free to browse around and reach out to me for opportunities or network.
 
           </Text>
+
+          {/* Skills section with tooltip describing the icon while hover over it */}
           <Text>Here are some of my technical skills:</Text>
-          <SimpleGrid columns={{ base: 8, sm: 10, md: 15, lg: 15 }} spacing={5}>
+          <SimpleGrid
+            id='skill-grid'
+            columns={{ base: 8, sm: 10, md: 15, lg: 15 }}
+            spacing={5}
+          >
             <SkillToolTip label={'React'}>
               <span>
                 <FaReact size={25} />
@@ -70,7 +79,7 @@ export default function About() {
                 <FaCss3Alt size={25} />
               </span>
             </SkillToolTip>
-            <SkillToolTip label={'Boostrap'}>
+            <SkillToolTip label={'Bootstrap'}>
               <span>
                 <FaBootstrap size={25} />
               </span>
@@ -111,6 +120,7 @@ export default function About() {
               </span>
             </SkillToolTip>
           </SimpleGrid>
+
         </Container>
       </Flex>
     </Container>
