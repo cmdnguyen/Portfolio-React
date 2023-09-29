@@ -1,5 +1,4 @@
 import {
-    Container,
     Heading,
     Card,
     CardBody,
@@ -10,7 +9,6 @@ import {
     Button,
     Text,
     Image,
-    useDisclosure,
 } from '@chakra-ui/react'
 
 import { FaGithub } from 'react-icons/fa'
@@ -93,7 +91,7 @@ const Projects = [
         They can keep track of their team points and vote on life lesson ideas.
         I started on the project shortly after the creator deployed it.
         I am still learning the technologies, but I will be an occasional contributor.`,
-        sklls: <DonBoscoHiepSiSkills />,
+        skills: <DonBoscoHiepSiSkills />,
         deployedURL: 'https://hiepsi.donbosco.cc/'
     }
 
