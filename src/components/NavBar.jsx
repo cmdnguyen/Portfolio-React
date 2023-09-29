@@ -39,9 +39,7 @@ const Links = [
     }
 ];
 
-const NavLink = (props) => {
-    const { children, page } = props;
-
+const NavLink = ({ children, page } ) => {
     return (
         <Box
             as="a"

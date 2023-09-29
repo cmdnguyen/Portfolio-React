@@ -15,9 +15,7 @@ import { FaGithub } from 'react-icons/fa'
 
 import {Projects} from '../utils/Projects'
 
-const ProjectGitHubButton = ({
-    href,
-}) => {
+const ProjectGitHubButton = (href) => {
     return (
         <Button
             id='github-button'
@@ -31,9 +29,7 @@ const ProjectGitHubButton = ({
     )
 }
 
-const DeployedSiteButton = ({
-    href,
-}) => {
+const DeployedSiteButton = (href) => {
     return (
         <Button
             id='deployed-site-button'
