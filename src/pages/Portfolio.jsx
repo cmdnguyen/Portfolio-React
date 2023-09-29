@@ -5,7 +5,7 @@ import {
 } from '@chakra-ui/react'
 
 
-import ProjectCard  from '../components/Project'
+import ProjectCard  from '../components/ProjectCard'
 
 export default function Portfolio() {
   return (
