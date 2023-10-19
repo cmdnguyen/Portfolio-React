@@ -96,6 +96,12 @@ export default function MainSkills() {
                 <SkillToolTip label={'Mongoose'}>
                     <SiMongoose size={25} />
                 </SkillToolTip>
+                <SkillToolTip label={'Vite'}>
+                    <SiVite size={25} />
+                </SkillToolTip>
+                <SkillToolTip label={'Apollo GraphQL'}>
+                    <SiApollographql size={25} />
+                </SkillToolTip>
             </SimpleGrid>
         </Container>
     )
