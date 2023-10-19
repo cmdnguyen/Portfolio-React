@@ -2,12 +2,22 @@ import {
     DonBoscoHiepSiSkills,
     RestaurantExpressSkills,
     ScreamAustinSkills,
-    SocialNetworkAPISkills,
     TechBlogSkills,
-    TextEditorSkills
+    TextEditorSkills,
+    CircleCollaborativeSkills
 } from './Skills'
 
 export const Projects = [
+    {
+        id: 'circle-collaborative-image',
+        src: 'images/circleProjectGif.gif',
+        name: 'Circle',
+        text: `This is a social media platform where users can create and join “circles” as a means of interacting with people that have similar interests. 
+        We believe our project takes inspiration from the likes of Reddit’s subbreddits with how groups are made and interact with each other as well as the look of sites like Twitter, Facebook, and Pintrest for a visually appealing user interface.`,
+        skills: <CircleCollaborativeSkills />,
+        githubURL: 'https://github.com/mj470/circle-collaborative',
+        deployedURL: 'https://circle-collaborative-37d794c2b6b2.herokuapp.com/CircleGroups'
+    },
     {
         id: 'restaurant-express-image',
         src: 'images/Restaurant Express.png',
@@ -47,15 +57,7 @@ export const Projects = [
         githubURL: 'https://github.com/cmdnguyen/Tech-Blog',
         deployedURL: ' https://cmdnguyen-tech-blog-0555a22cc12a.herokuapp.com/'
     },
-    {
-        id: 'social-network-image',
-        src: 'images/Social Network API.png',
-        name: 'Social Network API',
-        text: `This is a Social Media API that can add, update and remove users and thoughts into the database.
-        You can also create and remove friends and reactions to the associated user and thought respectively.`,
-        skills: <SocialNetworkAPISkills />,
-        githubURL: 'https://github.com/cmdnguyen/Social-Network-API'
-    },
+
     {
         id: 'scream-austin-image',
         src: 'images/Scream Austin.png',

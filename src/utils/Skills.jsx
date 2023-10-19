@@ -30,10 +30,12 @@ import {
     SiDirectus,
     SiInsomnia,
     SiMongodb,
-    SiMongoose
+    SiMongoose,
+    SiApollographql,
+    SiVite
 } from 'react-icons/si'
 
-import { DiMaterializecss } from 'react-icons/di'
+import { DiJavascript, DiMaterializecss } from 'react-icons/di'
 
 const SkillToolTip = ({
     children,
@@ -180,31 +182,6 @@ export function TechBlogSkills() {
     )
 }
 
-export function SocialNetworkAPISkills() {
-    return (
-        <>
-            <Heading size='sm'>Technologies used:</Heading>
-            <HStack id='portfolio-sklls'>
-                <SkillToolTip label={'JavaScript'}>
-                    <FaJs size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'MongoDB'}>
-                    <SiMongodb size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Mongoose'}>
-                    <SiMongoose size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Node.js'}>
-                    <FaNodeJs size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Insomnia'}>
-                    <SiInsomnia size={25} />
-                </SkillToolTip>
-            </HStack>
-        </>
-    )
-}
-
 export function ScreamAustinSkills() {
     return (
         <>
@@ -253,4 +230,38 @@ export function DonBoscoHiepSiSkills() {
             </HStack>
         </>
     )
+}
+
+export function CircleCollaborativeSkills() {
+        return (
+            <>
+            <Heading size='sm'>Technologies used:</Heading>
+            <HStack id='portfolio-skills'>
+                <SkillToolTip label={'React'}>
+                    <FaReact size={25} />
+                </SkillToolTip>
+                <SkillToolTip label={'Apollo GraphQL'}>
+                    <SiApollographql size={25} />
+                </SkillToolTip>
+                <SkillToolTip label={'JavaScript'}>
+                    <DiJavascript size={25} />
+                </SkillToolTip>
+                <SkillToolTip label={'Vite'}>
+                    <SiVite size={25} />
+                </SkillToolTip>
+                <SkillToolTip label={'MongoDB'}>
+                    <SiMongodb size={25} />
+                </SkillToolTip>
+                <SkillToolTip label={'Mongoose'}>
+                    <SiMongoose size={25} />
+                </SkillToolTip>
+                <SkillToolTip label={'Express.js'}>
+                    <SiExpress size={25} />
+                </SkillToolTip>
+                <SkillToolTip label={'Node.js'}>
+                    <FaNodeJs size={25} />
+                </SkillToolTip>
+            </HStack>
+        </>
+        )
 }
