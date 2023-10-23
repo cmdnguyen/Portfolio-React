@@ -1,5 +1,5 @@
 import { Text, Container, Heading, Image, Flex} from '@chakra-ui/react'
-import MainSkills from '../utils/Skills';
+import MainSkills from '../components/Skills';
 
 export default function About() {
   return (

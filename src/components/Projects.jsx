@@ -16,7 +16,7 @@ export const Projects = [
         We believe our project takes inspiration from the likes of Reddit’s subbreddits with how groups are made and interact with each other as well as the look of sites like Twitter, Facebook, and Pintrest for a visually appealing user interface.`,
         skills: <CircleCollaborativeSkills />,
         githubURL: 'https://github.com/mj470/circle-collaborative',
-        deployedURL: 'https://circle-collaborative-37d794c2b6b2.herokuapp.com/CircleGroups'
+        deployedURL: 'https://circle-collaborative-37d794c2b6b2.herokuapp.com/'
     },
     {
         id: 'restaurant-express-image',

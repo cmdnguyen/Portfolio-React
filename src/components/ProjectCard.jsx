@@ -13,7 +13,7 @@ import {
 
 import { FaGithub } from 'react-icons/fa'
 
-import { Projects } from '../utils/Projects'
+import { Projects } from './Projects'
 
 const ProjectGitHubButton = ({
     href,

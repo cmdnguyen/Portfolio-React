@@ -1,5 +1,5 @@
 import { Container, Heading, Button } from '@chakra-ui/react'
-import MainSkills from '../utils/Skills'
+import MainSkills from '../components/Skills'
 
 // Download PDF Button Function
 const downloadPDFButton = () => {
