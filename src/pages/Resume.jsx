@@ -1,7 +1,7 @@
 import { Container, Heading, Button } from '@chakra-ui/react'
 import MainSkills from '../components/Skills'
-import { useState } from 'react';
-import { Document, Page } from 'react-pdf';
+// import { useState } from 'react';
+// import { Document, Page } from 'react-pdf';
 import ResumePDF from "../../public/CatherineNguyenResume.pdf"
 
 // Download PDF Button Function
@@ -19,24 +19,24 @@ const downloadPDFButton = () => {
     })
   })
 }
-const handlePreviousPage = () => {
-  setPageNumber(prevPageNumber => prevPageNumber - 1);
-};
+// const handlePreviousPage = () => {
+//   setPageNumber(prevPageNumber => prevPageNumber - 1);
+// };
 
-const handleNextPage = () => {
-  setPageNumber(prevPageNumber => prevPageNumber + 1);
-};
+// const handleNextPage = () => {
+//   setPageNumber(prevPageNumber => prevPageNumber + 1);
+// };
 
 
 
 
 export default function Resume() {
-  const [numPages, setNumPages] = useState();
-  const [pageNumber, setPageNumber] = useState(1);
+  // const [numPages, setNumPages] = useState();
+  // const [pageNumber, setPageNumber] = useState(1);
 
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
+  // function onDocumentLoadSuccess({ numPages }) {
+  //   setNumPages(numPages);
+  // }
 
   return (
     <Container>
@@ -49,7 +49,7 @@ export default function Resume() {
         <Button onClick={downloadPDFButton}>
           Download Resume
         </Button>
-        <div style={{ width: '100%', height: '800px', border: '1px solid #ddd' }}>
+        {/* <div style={{ width: '100%', height: '800px', border: '1px solid #ddd' }}>
           <Document file={ResumePDF} onLoadSuccess={onDocumentLoadSuccess}>
             <Page pageNumber={pageNumber} renderTextLayer={false} renderAnnotationLayer={false} />
           </Document>
@@ -62,7 +62,7 @@ export default function Resume() {
         </Button>
         <Button onClick={handleNextPage} disabled={pageNumber >= numPages}>
           Next Page
-        </Button>
+        </Button> */}
       </Container>
 
       {/* Skills section */}
