@@ -1,10 +1,12 @@
 import {
     Container,
     Heading,
-    Tooltip,
     Text,
     SimpleGrid,
-    HStack
+    HStack,
+    Tag,
+    TagLabel,
+    TagRightIcon,
 } from '@chakra-ui/react'
 
 import {
@@ -25,83 +27,100 @@ import {
     SiTypescript,
     SiDotenv,
     SiHandlebarsdotjs,
-    SiBulma,
     SiNextdotjs,
     SiDirectus,
-    SiInsomnia,
     SiMongodb,
     SiMongoose,
     SiApollographql,
     SiVite
 } from 'react-icons/si'
 
-import { DiJavascript, DiMaterializecss } from 'react-icons/di'
+import { DiMaterializecss } from 'react-icons/di'
 
-const SkillToolTip = ({
-    children,
-    label
+const SkillTab = ({
+    children1,
+    children2
 }) => {
     return (
-        <Tooltip
-            label={label}
-            fontSize='md'>
-            <span>{children}</span>
-        </Tooltip>
+        <HStack spacing={2}>
+            <Tag colorScheme="blue">
+                <TagLabel>{children1}</TagLabel>
+                <TagRightIcon>{children2}</TagRightIcon>
+            </Tag>
+        </HStack>
     )
 }
 
 export default function MainSkills() {
     return (
-        <Container my={1}>
+        <Container maxW='full'>
             {/* Skills section with tooltip describing the icon while hover over it */}
             <Text>Here are some of my technical skills:</Text>
             <SimpleGrid
                 id='skill-grid'
-                columns={{ base: 8, sm: 10, md: 15, lg: 15 }}
-                spacing={5}
+                columns={{ base: 1, sm: 2, md: 3, lg: 4 }}
+                spacing={1}
             >
-                <SkillToolTip label={'React'}>
-                    <FaReact size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'JavaScript'}>
+                <SkillTab children1={"React"} children2={<FaReact size={25} />} />
+                <SkillTab children1={"JavaScript"} children2={<FaJs size={25} />} />
+                <SkillTab children1={"HTML5"} children2={<FaHtml5 size={25} />} />
+                <SkillTab children1={"CSS3"} children2={<FaCss3Alt size={25} />} />
+                <SkillTab children1={"Bootstrap"} children2={<FaBootstrap size={25} />} />
+                <SkillTab children1={"Chakra UI"} children2={<SiChakraui size={25} />} />
+                <SkillTab children1={"Node.js"} children2={<FaNodeJs size={25} />} />
+                <SkillTab children1={"Express.js"} children2={<SiExpress size={25} />} />
+                <SkillTab children1={"MySQL"} children2={<SiMysql size={25} />} />
+                <SkillTab children1={"Sequelize"} children2={<SiSequelize size={25} />} />
+                <SkillTab children1={"MongoDB"} children2={<SiMongodb size={25} />} />
+                <SkillTab children1={"Mongoose"} children2={<SiMongoose size={25} />} />
+                <SkillTab children1={"Vite"} children2={<SiVite size={25} />} />
+                <SkillTab children1={"Apollo GraphQL"} children2={<SiApollographql size={25} />} />
+                <SkillTab children1={"TypeScript"} children2={<SiTypescript size={25} />} />
+                <SkillTab children1={"Next.js"} children2={<SiNextdotjs size={25} />} />
+
+
+
+                {/* Add more SkillTab components for other skills */}
+
+                {/* <SkillTab label={'JavaScript'}>
                     <FaJs size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'HTML5'}>
+                </SkillTab>
+                <SkillTab label={'HTML5'}>
                     <FaHtml5 size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'CSS3'}>
+                </SkillTab>
+                <SkillTab label={'CSS3'}>
                     <FaCss3Alt size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Bootstrap'}>
+                </SkillTab>
+                <SkillTab label={'Bootstrap'}>
                     <FaBootstrap size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Chakra UI'}>
+                </SkillTab>
+                <SkillTab label={'Chakra UI'}>
                     <SiChakraui size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Node.js'}>
+                </SkillTab>
+                <SkillTab label={'Node.js'}>
                     <FaNodeJs size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Express.js'}>
+                </SkillTab>
+                <SkillTab label={'Express.js'}>
                     <SiExpress size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'MySQL'}>
+                </SkillTab>
+                <SkillTab label={'MySQL'}>
                     <SiMysql size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Sequelize'}>
+                </SkillTab>
+                <SkillTab label={'Sequelize'}>
                     <SiSequelize size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'MongoDB'}>
+                </SkillTab>
+                <SkillTab label={'MongoDB'}>
                     <SiMongodb size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Mongoose'}>
+                </SkillTab>
+                <SkillTab label={'Mongoose'}>
                     <SiMongoose size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Vite'}>
+                </SkillTab>
+                <SkillTab label={'Vite'}>
                     <SiVite size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Apollo GraphQL'}>
-                    <SiApollographql size={25} />
-                </SkillToolTip>
+                </SkillTab>
+                <SkillTab label={'Apollo GraphQL'}>
+                    <SiApollographql size={25} /> */}
+                {/* </SkillTab> */}
             </SimpleGrid>
         </Container>
     )
@@ -111,48 +130,15 @@ export function RestaurantExpressSkills() {
     return (
         <>
             <Heading size='sm'>Technologies used:</Heading>
-            <HStack id='portfolio-skills'>
-                <SkillToolTip label={'JavaScript'}>
-                    <FaJs size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Express.js'}>
-                    <SiExpress size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Handlebars.js'}>
-                    <SiHandlebarsdotjs size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Materialize CSS'}>
-                    <DiMaterializecss size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'MySQL'}>
-                    <SiMysql size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Sequelize'}>
-                    <SiSequelize size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Node.js'}>
-                    <FaNodeJs size={25} />
-                </SkillToolTip>
-            </HStack>
-        </>
-    )
-}
-
-export function TextEditorSkills() {
-    return (
-        <>
-            <Heading size='sm'>Technologies used:</Heading>
-            <HStack id='portfolio-skills'>
-                <SkillToolTip label={'JavaScript'}>
-                    <FaJs size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Express.js'}>
-                    <SiExpress size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Node.js'}>
-                    <FaNodeJs size={25} />
-                </SkillToolTip>
-            </HStack>
+            <SimpleGrid columns={{ lg: 2, sm: 1, base: 1 }} spacing={1}>
+                <SkillTab children1={"JavaScript"} children2={<FaJs size={25} />} />
+                <SkillTab children1={"Express.js"} children2={<SiExpress size={25} />} />
+                <SkillTab children1={"Handlebars.js"} children2={<SiHandlebarsdotjs size={25} />} />
+                <SkillTab children1={"Materialize CSS"} children2={<DiMaterializecss size={25} />} />
+                <SkillTab children1={"MySQL"} children2={<SiMysql size={25} />} />
+                <SkillTab children1={"Sequelize"} children2={<SiSequelize size={25} />} />
+                <SkillTab children1={"Node.js"} children2={<FaNodeJs size={25} />} />
+            </SimpleGrid>
         </>
     )
 }
@@ -161,51 +147,15 @@ export function TechBlogSkills() {
     return (
         <>
             <Heading size='sm'>Technologies used:</Heading>
-            <HStack id='portfolio-skills'>
-                <SkillToolTip label={'JavaScript'}>
-                    <FaJs size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Express.js'}>
-                    <SiExpress size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Bootstrap'}>
-                    <FaBootstrap size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'MySQL'}>
-                    <SiMysql size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Sequelize'}>
-                    <SiSequelize size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'dotenv'}>
-                    <SiDotenv size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Handlebars.js'}>
-                    <SiHandlebarsdotjs size={25} />
-                </SkillToolTip>
-            </HStack>
-        </>
-    )
-}
-
-export function ScreamAustinSkills() {
-    return (
-        <>
-            <Heading size='sm'>Technologies used:</Heading>
-            <HStack id='portfolio-skills'>
-                <SkillToolTip label={'JavaScript'}>
-                    <FaJs size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'HTML5'}>
-                    <FaHtml5 size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'CSS3'}>
-                    <FaCss3Alt size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Bulma CSS'}>
-                    <SiBulma size={25} />
-                </SkillToolTip>
-            </HStack>
+            <SimpleGrid columns={{ lg: 2, sm: 1, base: 1 }} spacing={1}>
+                <SkillTab children1={"JavaScript"} children2={<FaJs size={25} />} />
+                <SkillTab children1={"Express.js"} children2={<SiExpress size={25} />} />
+                <SkillTab children1={"Bootstrap"} children2={<FaBootstrap size={25} />} />
+                <SkillTab children1={"MySQL"} children2={<SiMysql size={25} />} />
+                <SkillTab children1={"Sequelize"} children2={<SiSequelize size={25} />} />
+                <SkillTab children1={"dotenv"} children2={<SiDotenv size={25} />} />
+                <SkillTab children1={"Handlebars.js"} children2={<SiHandlebarsdotjs size={25} />} />
+            </SimpleGrid>
         </>
     )
 }
@@ -214,60 +164,32 @@ export function DonBoscoHiepSiSkills() {
     return (
         <>
             <Heading size='sm'>Technologies used:</Heading>
-            <HStack id='portfolio-skills'>
-                <SkillToolTip label={'React'}>
-                    <FaReact size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Chakra UI'}>
-                    <SiChakraui size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'TypeScript'}>
-                    <SiTypescript size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Next.js'}>
-                    <SiNextdotjs size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Directus'}>
-                    <SiDirectus size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Yarn'}>
-                    <FaYarn size={25} />
-                </SkillToolTip>
-            </HStack>
+            <SimpleGrid columns={{ lg: 2, sm: 1, base: 1 }} spacing={1}>
+                <SkillTab children1={"React"} children2={<FaReact size={25} />} />
+                <SkillTab children1={"Chakra UI"} children2={<SiChakraui size={25} />} />
+                <SkillTab children1={"TypeScript"} children2={<SiTypescript size={25} />} />
+                <SkillTab children1={"Next.js"} children2={<SiNextdotjs size={25} />} />
+                <SkillTab children1={"Directus"} children2={<SiDirectus size={25} />} />
+                <SkillTab children1={"Yarn"} children2={<FaYarn size={25} />} />
+            </SimpleGrid>
         </>
     )
 }
 
 export function CircleCollaborativeSkills() {
-        return (
-            <>
+    return (
+        <>
             <Heading size='sm'>Technologies used:</Heading>
-            <HStack id='portfolio-skills'>
-                <SkillToolTip label={'React'}>
-                    <FaReact size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Apollo GraphQL'}>
-                    <SiApollographql size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'JavaScript'}>
-                    <DiJavascript size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Vite'}>
-                    <SiVite size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'MongoDB'}>
-                    <SiMongodb size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Mongoose'}>
-                    <SiMongoose size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Express.js'}>
-                    <SiExpress size={25} />
-                </SkillToolTip>
-                <SkillToolTip label={'Node.js'}>
-                    <FaNodeJs size={25} />
-                </SkillToolTip>
-            </HStack>
+            <SimpleGrid columns={{ lg: 2, sm: 1, base: 1 }} spacing={1}>
+                <SkillTab children1={"React"} children2={<FaReact size={25} />} />
+                <SkillTab children1={"JavaScript"} children2={<FaJs size={25} />} />
+                <SkillTab children1={"Express.js"} children2={<SiExpress size={25} />} />
+                <SkillTab children1={"Node.js"} children2={<FaNodeJs size={25} />} />
+                <SkillTab children1={"Apollo GraphQL"} children2={<SiApollographql size={25} />} />
+                <SkillTab children1={"MongoDB"} children2={<SiMongodb size={25} />} />
+                <SkillTab children1={"Mongoose"} children2={<SiMongoose size={25} />} />
+                <SkillTab children1={"Vite"} children2={<SiVite size={25} />} />
+            </SimpleGrid>
         </>
-        )
+    )
 }

@@ -9,7 +9,7 @@ import ProjectCard  from '../components/ProjectCard'
 
 export default function Portfolio() {
   return (
-    <Container id='portfolio-page' maxW='container.lg' mb={10}>
+    <Container id='portfolio-page' maxW='full' mb={10}>
       <Heading id='portfolio-title'>
         Portfolio
       </Heading>
@@ -17,7 +17,7 @@ export default function Portfolio() {
       {/* Portfolio Grid */}
       <SimpleGrid
         id='portfolio-grid'
-        columns={{ lg: 3, md: 2, sm: 1 }}
+        columns={{ xl: 4, lg: 3, md: 2, sm: 1, base: 1 }}
         spacing={4}
       >
         <ProjectCard />

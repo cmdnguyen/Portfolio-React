@@ -1,4 +1,4 @@
-import { Box, Container, Stack, chakra, useColorModeValue, VisuallyHidden, Text } from '@chakra-ui/react'
+import { Box, Container, Stack, chakra, useColorModeValue, VisuallyHidden, Text, } from '@chakra-ui/react'
 import { SiX } from 'react-icons/si'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 

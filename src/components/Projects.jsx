@@ -1,9 +1,7 @@
 import {
     DonBoscoHiepSiSkills,
     RestaurantExpressSkills,
-    ScreamAustinSkills,
     TechBlogSkills,
-    TextEditorSkills,
     CircleCollaborativeSkills
 } from './Skills'
 
@@ -33,17 +31,6 @@ export const Projects = [
         deployedURL: 'https://restaurant-express-c9c955225096.herokuapp.com/'
     },
     {
-        id: 'text-editor-image',
-        src: 'images/JATE-Demo.png',
-        name: 'Text Editor',
-        text: `This is a text editor that can run in a browser or as a Progressive Web Application.
-        Users can save any text inputs in the text editor and it will save into a database when the user clicks out of the application.
-        This application can also function offline since the data in the app is stored locally through IndexedDB.`,
-        skills: <TextEditorSkills />,
-        githubURL: 'https://github.com/cmdnguyen/Text-Editor',
-        deployedURL: 'https://cmdnguyen-text-editor-fbc030432d18.herokuapp.com/'
-    },
-    {
         id: 'tech-blog-image',
         src: 'images/Tech Blog.png',
         name: 'Tech Blog',
@@ -56,18 +43,6 @@ export const Projects = [
         skills: <TechBlogSkills />,
         githubURL: 'https://github.com/cmdnguyen/Tech-Blog',
         deployedURL: ' https://cmdnguyen-tech-blog-0555a22cc12a.herokuapp.com/'
-    },
-
-    {
-        id: 'scream-austin-image',
-        src: 'images/Scream Austin.png',
-        name: 'Scream Austin',
-        text: `This is a website that showcases local Austin, Texas artists and venues.
-        It provides music connoisseurs easy access to information on their favorite local artists.
-        The site highlights artists with their bios and YouTube videos.`,
-        skills: <ScreamAustinSkills />,
-        githubURL: 'https://github.com/alexisstrong11/Scream-Austin',
-        deployedURL: 'https://alexisstrong11.github.io/Scream-Austin/'
     },
     {
         id: 'don-bosco-hiep-si-image',

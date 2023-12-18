@@ -8,11 +8,11 @@ import { chakra, Flex } from '@chakra-ui/react';
 function App() {
 
   return (
-    <Flex direction='column' flex='1'>
+    <Flex direction='column' flex='1' minH='100vh'>
       <chakra.header id='header' bg='blue.600'>
         <Header />
       </chakra.header>
-      <main>
+      <main style={{ flex: 1 }}>
         <Outlet />
       </main>
       <Footer />

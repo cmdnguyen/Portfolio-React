@@ -1,13 +1,14 @@
-import { Text, Container, Heading, Image, Flex} from '@chakra-ui/react'
+import { Text, Container, Heading, Image, Flex } from '@chakra-ui/react'
 import MainSkills from '../components/Skills';
+
 
 export default function About() {
   return (
-    <Container id='about-page' maxW='container.md' mb={10}>
-      <Heading id='about-title'>
+    <Container id='about-page' maxW='container.lg' mb={10}>
+      <Heading id='about-title' mb={4}>
         About Me
       </Heading>
-      {/* Flex container with headshot, bio and skill section */}
+      {/* Flex container with headshot, bio, skills, and projects section */}
       <Flex
         id='About-Me-Section'
         direction={{ base: 'column', md: 'row' }}
@@ -21,7 +22,7 @@ export default function About() {
           src='/images/CatherineNguyen_2018_SQHeadshot.jpg'
           alt='Catherine Nguyen'
         />
-        <Container id='bio-section'>
+        <Container id='bio-section' maxW='full'>
           <Text p={3}>
             Hi, my name is Catherine Nguyen. Welcome to my portfolio page.
             I am currently learning full stack web development in a coding bootcamp.
@@ -37,7 +38,7 @@ export default function About() {
           </Text>
 
           {/* Skills section with tooltip describing the icon while hover over it */}
-         <MainSkills />
+          <MainSkills />
         </Container>
       </Flex>
     </Container>
